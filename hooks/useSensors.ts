@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
-import { SensorValues } from '../types';
+import { useState, useEffect, useCallback } from "react";
+import { SensorValues } from "../types";
 
 interface UseSensorsReturn {
   data: SensorValues;
@@ -15,10 +15,8 @@ export const useSensors = (): UseSensorsReturn => {
 
   useEffect(() => {
     // Detekce iOS 13+ prostředí
-    const isIOSDevice =
-      typeof DeviceOrientationEvent !== 'undefined' &&
-      typeof (DeviceOrientationEvent as any).requestPermission === 'function';
-    
+    const isIOSDevice = typeof DeviceOrientationEvent !== "undefined" && typeof (DeviceOrientationEvent as any).requestPermission === "function";
+
     setIsIOS(isIOSDevice);
 
     if (!isIOSDevice) {
@@ -35,19 +33,21 @@ export const useSensors = (): UseSensorsReturn => {
   }, []);
 
   const requestPermission = async () => {
-    if (typeof (DeviceOrientationEvent as any).requestPermission === 'function') {
+    if (typeof (DeviceOrientationEvent as any).requestPermission === "function") {
       try {
         const permissionState = await (DeviceOrientationEvent as any).requestPermission();
-        if (permissionState === 'granted') {
+        if (permissionState === "granted") {
           setPermissionGranted(true);
         } else {
           setPermissionGranted(false);
-          alert('Přístup k senzorům byl zamítnut. Povolte jej v nastavení Safari.');
+          alert(
+            "Přístup k senzorům byl zamítnut. Povolte jej v nastavení Safari. Dle verze iOS povolení udělte v Nastavení > Safari > Pokročilé > Senzory pohybu a polohy."
+          );
         }
       } catch (error) {
         console.error(error);
         // Fallback pro dev prostředí nebo simulátor
-        setPermissionGranted(false); 
+        setPermissionGranted(false);
       }
     } else {
       // Non-iOS 13+ devices
@@ -57,9 +57,9 @@ export const useSensors = (): UseSensorsReturn => {
 
   useEffect(() => {
     if (permissionGranted) {
-      window.addEventListener('deviceorientation', handleOrientation);
+      window.addEventListener("deviceorientation", handleOrientation);
       return () => {
-        window.removeEventListener('deviceorientation', handleOrientation);
+        window.removeEventListener("deviceorientation", handleOrientation);
       };
     }
   }, [permissionGranted, handleOrientation]);
