@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
+    base: "/T6-Leveller/", // <-- toto je klíčové pro GitHub Pages v podsložce
     server: {
       host: "192.168.1.251", // 🔥 pouze jedna konkrétní IP
       port: 3000,
