@@ -1,10 +1,10 @@
 import { Wheelbase, Dimensions } from "./types";
 
-// Rozměry v mm
 export const T6_DIMENSIONS: Record<Wheelbase, Dimensions> = {
   [Wheelbase.SHORT]: {
-    wheelbase: 3000, // Rozměry v mm
-    trackWidth: 1628,
+    // Rozměry v mm
+    wheelbase: 3000, // rozvor náprav
+    trackWidth: 1628, // rozchod kol
   },
   [Wheelbase.LONG]: {
     wheelbase: 3400,
