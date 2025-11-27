@@ -41,10 +41,11 @@ export const SettingsPanel: React.FC<Props> = ({ currentWheelbase, onToggleWheel
         {/* Tooltip */}
         {showInfo && (
           <div className="absolute bottom-[calc(100%+10px)] right-0 left-[-50px] bg-gray-800 text-xs text-gray-200 p-3 rounded-lg border border-gray-600 shadow-xl z-30 animate-fade-in-up">
-            <p className="leading-tight mb-2">Položte a zafixujte telefon na pevné ploše v autě (např. držák telefonu).</p>
+            <p className="leading-tight mb-2">1. krok: Položte a zafixujte telefon na pevné ploše v autě (např. držák telefonu).</p>
+            <p className="leading-tight mb-2">2. krok: Zastavte s vozem na rovině.</p>
             <p className="leading-tight mb-2">
-              Stisknutím tlačítka "Kalibrovat nulu" nastavíte aktuální náklon jako "rovinu". Tlačítko "Resetovat" znamená nastavit defaultní kalibraci
-              telefonu.
+              3. krok: Stisknutím tlačítka "Kalibrovat nulu" nastavíte aktuální náklon jako "rovinu". Tlačítko "Resetovat" znamená nastavit defaultní
+              kalibraci telefonu.
             </p>
             <p className="leading-tight">!Pozor! - Horní hrana telefonu je pořád předek auta i pokud je telefon v horizontální poloze.</p>
             <div className="absolute bottom-[-5px] right-6 w-2 h-2 bg-gray-800 border-b border-r border-gray-600 transform rotate-45"></div>
