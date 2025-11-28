@@ -14,7 +14,7 @@ export const SettingsPanel: React.FC<Props> = ({ currentWheelbase, onToggleWheel
   return (
     <div className="grid grid-cols-2 gap-4 mt-8 w-full max-w-md">
       <div className="bg-vw-panel p-4 rounded-xl border border-gray-700">
-        <label className="block text-xs text-gray-400 uppercase mb-2">Model</label>
+        <label className="block text-xs text-gray-400 uppercase mb-2">Model VW T5/T6</label>
         <div className="flex bg-gray-900 rounded-lg p-1 h-14">
           <button
             onClick={() => onToggleWheelbase(Wheelbase.SHORT)}
@@ -40,15 +40,35 @@ export const SettingsPanel: React.FC<Props> = ({ currentWheelbase, onToggleWheel
       <div className="bg-vw-panel p-4 rounded-xl border border-gray-700 flex flex-col gap-2 justify-center relative">
         {/* Tooltip */}
         {showInfo && (
-          <div className="absolute bottom-[calc(100%+10px)] right-0 left-[-50px] bg-gray-800 text-xs text-gray-200 p-3 rounded-lg border border-gray-600 shadow-xl z-30 animate-fade-in-up">
-            <p className="leading-tight mb-2">1. krok: Položte a zafixujte telefon na pevné ploše v autě (např. držák telefonu).</p>
-            <p className="leading-tight mb-2">2. krok: Zastavte s vozem na rovině.</p>
-            <p className="leading-tight mb-2">
-              3. krok: Stisknutím tlačítka "Kalibrovat nulu" nastavíte aktuální náklon jako "rovinu". Tlačítko "Resetovat" znamená nastavit defaultní
-              kalibraci telefonu.
-            </p>
-            <p className="leading-tight">!Pozor! - Horní hrana telefonu je pořád předek auta i pokud je telefon v horizontální poloze.</p>
-            <div className="absolute bottom-[-5px] right-6 w-2 h-2 bg-gray-800 border-b border-r border-gray-600 transform rotate-45"></div>
+          <div className="absolute bottom-[calc(100%+10px)] right-0 left-[-50px] bg-gray-800 text-xs text-gray-200 p-4 rounded-lg border border-gray-600 shadow-xl z-30 animate-fade-in-up w-64">
+            <h3 className="font-bold text-sm mb-3 text-white">📘 Jak používat LEVELLER</h3>
+            <div className="space-y-3 text-gray-300">
+              <div>
+                <p className="font-bold text-white mb-1">1️⃣ 📱 Umístěte telefon</p>
+                <p className="pl-1">Položte telefon na pevné místo v autě (primárně držák). !Pozor! Horní hrana telefonu = předek auta.</p>
+              </div>
+              <div>
+                <p className="font-bold text-white mb-1">2️⃣ ⛰️ Najděte rovinu</p>
+                <p className="pl-1">Zastavte na co nejrovnějším místě.</p>
+              </div>
+              <div>
+                <p className="font-bold text-white mb-1">3️⃣ 🎯 Kalibrujte nulu</p>
+                <p className="pl-1">Stiskněte „Kalibrovat nulu“ → aplikace si zapamatuje aktuální pozici jako rovinu.</p>
+              </div>
+              <div>
+                <p className="font-bold text-white mb-1">4️⃣ 📏 Podložení se nyní vypočítává automaticky</p>
+                <p className="pl-1">Od této chvíle se veškeré hodnoty podložení počítají podle vaší kalibrace.</p>
+              </div>
+              <div>
+                <p className="font-bold text-white mb-1">5️⃣ 💾 Kalibrace se ukládá</p>
+                <p className="pl-1">Můžete aplikaci zavřít — kalibrace zůstává uložena i po znovuotevření.</p>
+              </div>
+              <div>
+                <p className="font-bold text-white mb-1">6️⃣ 🔄 Reset kalibrace</p>
+                <p className="pl-1">Tlačítko „Resetovat“ vrátí telefon do výchozí (defaultní) kalibrace.</p>
+              </div>
+            </div>
+            <div className="absolute bottom-[-5px] right-6 w-3 h-3 bg-gray-800 border-b border-r border-gray-600 transform rotate-45"></div>
           </div>
         )}
 

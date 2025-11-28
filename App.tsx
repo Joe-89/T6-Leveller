@@ -136,9 +136,10 @@ const App: React.FC = () => {
       {/* Header */}
       <header className="mb-6 text-center z-10 shrink-0">
         <h1 className="text-3xl font-black tracking-tight text-white mb-1">
-          VW T6 <span className="text-vw-accent">LEVELLER</span>
+          VAN <span className="text-vw-accent">LEVELLER</span>
         </h1>
-        <p className="text-gray-400 text-sm">Vodováha pro VW T6 s výpočtem podložení kol.</p>
+        <p className="text-gray-400 text-sm">Chytrá vodováha pro měření náklonu a výpočet podložení kol.</p>
+        <p className="text-gray-500 text-xs mt-1">Optimalizováno pro vozy VW T5/T6.</p>
       </header>
 
       {/* Main Visualization Area */}
