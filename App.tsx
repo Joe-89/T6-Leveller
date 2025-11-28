@@ -167,7 +167,7 @@ const App: React.FC = () => {
       </main>
 
       {/* Status Info */}
-      <div className="flex flex-col items-center mb-4 shrink-0">
+      <div className="flex flex-col items-center mb-1 shrink-0">
         {/* Calibrated Angles */}
         <div className="flex gap-4 text-xs text-gray-500 font-mono">
           <div className="bg-gray-800/50 px-3 py-1 rounded border border-gray-700">
@@ -179,7 +179,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Raw Sensor Values */}
-        <div className="mt-2 flex gap-3 text-[10px] text-gray-600 font-mono opacity-60">
+        <div className="mt-2 flex gap-3 text-[12px] text-gray-600 font-mono opacity">
           <span>Raw β: {sensorData.beta.toFixed(1)}°</span>
           <span>Raw γ: {sensorData.gamma.toFixed(1)}°</span>
         </div>
